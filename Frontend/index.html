@@ -2,16 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="./imagenes/logo.png">
   <title>CertifiCLAN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="Css/estilos.css">
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-left">
-        <a href="index.html" class="nav-logo">CertiCLAN</a>
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="certificaciones.html" class="nav-link">Certificaciones</a>
+      <div class="logo-circulo">
+        <img src="imagenes/logo.png">
+      </div>
+      <a href="index.html" class="nav-logo">CertifiCLAN</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="certificaciones.html" class="nav-link">Certificaciones</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+      <a href="AboutUs.html" class="nav-link">About Us</a>
     </div>
     <div class="nav-right">
       <span id="userName" class="user-name"></span>
@@ -27,10 +35,80 @@
   <!-- Secciones principales -->
   <main>
     <section id="home">
-      <h1>Bienvenido a MiSitio</h1>
-      <p>Esta es una página de inicio sencilla con navegación y login modal.</p>
+      <h1>Bienvenido a CertifiCLAN</h1>
+      <h6>Lenguajes que construyen ideas,</h6>
+      <h6>código que transforma el mundo.</h6>
     </section>
-    
+
+    <section class="servicios-section"> 
+       <!-- div.servicios-container -->
+       <div class="servicios-container">
+           <h2 class="servicios-titulo">Nuestras Certificaciones</h2>
+           <div class="servicios-grid">
+                <div class="servicio-card">
+                  <img src="imagenes/java.png" alt="">
+                  <h3>Java</h3>
+                  <p>
+                    Es un lenguaje de programación de alto nivel, orientado a objetos y multiplataforma, 
+                    conocido por su portabilidad, seguridad y robustez.
+                  </p>
+                  <p>
+                    En nuestro curso ofrecemos una preparacion sobre conocimientos basicos sobre Java
+                  </p>
+                  <p>Explore más:</p>
+                  <a href="certificaciones.html#java">
+                    <button id="more">>>View</button>
+                  </a>
+                </div>
+
+                <div class="servicio-card">
+                  <img src="imagenes/html.png">
+                  <h3>HTML</h3>
+                  <p>
+                    Son las siglas de HyperText Markup Language (Lenguaje de Marcado de Hipertexto), es 
+                    el lenguaje estándar que se utiliza para crear y estructurar el contenido de las 
+                    páginas web.
+                  </p>
+                  <p>Explore más:</p>
+                  <a href="certificaciones.html#html">
+                    <button id="more">>>View</button>
+                  </a>
+                </div>
+
+                <div class="servicio-card">
+                  <img src="imagenes/javascript.jpg">
+                  <h3>JavaScript</h3>
+                  <p>
+                    Es un lenguaje de programación que se usa principalmente para crear páginas web 
+                    interactivas y dinámicas, funcionando junto con HTML y CSS. Permite añadir 
+                    características como animaciones, menús desplegables, etc.
+                  </p>
+                  <p>Explore más:</p>
+                  <a href="certificaciones.html#javascript">
+                    <button id="more">>>View</button>
+                  </a>
+                </div>
+
+                <div class="servicio-card">
+                  <img src="imagenes/c++.png">
+                  <h3>C++</h3>
+                  <p>
+                    Lenguaje de programación de propósito general que extiende el lenguaje C y se utiliza 
+                    para crear software de alto rendimiento, como videojuegos, sistemas operativos y 
+                    aplicaciones de escritorio.
+                  </p>
+                  <p>Explore más:</p>
+                  <a href="certificaciones.html#c-plus">
+                    <button id="more">>>View</button>
+                  </a> 
+                </div>
+           </div>
+       </div>
+    </section>
+
+    <section>
+        <p>jdncjdnjcdjnc</p>
+    </section>
   </main>
 
   <!-- Modal de Login -->
@@ -45,10 +123,17 @@
       </form>
     </div>
   </div>
-
-  <footer class="footer">DIEGO EMILIO VENEGAS FLORES</footer>
+  <footer class="footer">
+        <p>DIEGO EMILIO VENEGAS FLORES</p>
+        <p>siguenos en:</p>
+        <div class="red-social">
+            <a href="https://www.instagram.com/certificlan?igsh=MXVrZXIwdTYzd2Fxbw==" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+   </footer>
   
-  <script src="js/app.js"></script>
+  <script src="js/login.js"></script>
   
 </body>
 </html>

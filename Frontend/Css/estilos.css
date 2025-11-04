@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .user-name {
 	color: #fff;
 	font-weight: 500;
@@ -7,25 +12,92 @@
 
 body {
 	font-family: Arial, sans-serif;
-	margin: 0;
 	background: #f7f7f7;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+}
+
+#home{
+    background-image: url("../imagenes/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    color: rgb(238, 238, 238);
+    text-align: left;
+    font-size: 30px;
+    padding: 100px 20px;
+}
+
+/*certificaciones*/
+#right img{
+    flex: 1;
+    margin-right: 200px;
+    height: 200px;
+    width: 200px;
+}
+
+#left{
+    flex: 2;
+    margin-left: 100px;
+}
+
+.boton-bueno{
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.boton-bueno:hover{
+    background-color: rgb(132, 255, 255);
+    transition: 0.2s;
+}
+
+.boton {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/*Pagina Principal*/
+.contenido{
+    display: flex;
+    justify-content: space-between;
 }
 
 .footer{
+    grid-area: footer;
     background: darkcyan;
     color: #fff;
-    grid-column: span 3;
 	text-align: center;
 }
 
 /* Navbar */
 .navbar {
+    grid-area: header;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background: darkcyan;
 	color: #fff;
 	padding: 0.5rem 1.5rem;
+    opacity: 0.9;
+    position: sticky;
+    top: 0%;
 }
 .nav-left {
 	display: flex;
@@ -43,7 +115,7 @@ body {
 	text-decoration: none;
 	padding: 0.3rem 0.7rem;
 	border-radius: 3px;
-	transition: background 0.2s;
+	transition: 0.2s;
 }
 .nav-link:hover {
 	background: #444;
@@ -66,14 +138,46 @@ body {
 	background: #444;
 }
 
-main {
-	max-width: 700px;
-	margin: 2rem auto;
-	background: #fff;
-	padding: 2rem;
-	border-radius: 8px;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+.logo-circulo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
 }
+
+.logo-circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/*secciones principales*/
+main {
+    grid-area: main;
+}
+
+main section {
+  border-bottom: 2px solid #ccc;
+  padding: 1.5rem 0;
+}
+
+main section h2 {
+  color: darkcyan;
+  margin-bottom: 0.5rem;
+}
+
+#titulo{
+    color: #222;
+    font-size: 30px;
+    background-color: dodgerblue;
+}
+
+main section p {
+  color: #333;
+  line-height: 1.6;
+}
+
 
 /* Modal */
 .modal {
@@ -136,4 +240,208 @@ main {
 }
 #formLogin button:hover {
 	background: #444;
+}
+
+/*red social*/
+.red-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.red-social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 22px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.red-social a:hover {
+  background-color: #020e5f87;
+  transform: scale(1.1);
+}
+
+/*tarjetas de servicios*/
+.servicios-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.servicios-container{
+    padding: 0 20px;
+}
+
+.servicios-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    color: darkcyan;
+    margin-bottom: 40px;
+}
+
+.servicios-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.servicio-card {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.servicio-card img{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#more{
+    padding: 10px;
+    background-color: darkcyan;
+    border-radius: 8px;
+}
+
+#more:hover{
+    background-color: cyan;
+    cursor: pointer;
+}
+
+/*Contacto*/
+input, textarea {
+    border-radius: 8px;
+    border: 1px solid rgb(25, 21, 41);
+}
+
+input {
+    height: 20px;
+}
+
+.section-form {
+    padding: 50px;
+    padding-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-title h2{
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.contact-title h3 {
+    font-weight: 450;
+    font-size: 1.5rem;
+}
+
+.contact-data {
+    padding-left: 25px;
+}
+
+.contact-data h3{
+    font-weight: 450;
+    font-size: 1rem;
+}
+
+.contact-data p {
+    padding-left: 15px;
+    font-size: .8rem;
+}
+
+.contact-form {
+    flex: 2;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-input textarea {
+    width: 350px;
+}
+
+.form-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.form-button button {
+    width: 150px;
+    height: 150px;
+    background-color: cyan;
+    border-style: none;
+    border-radius: 100%;
+    transition: 0.2s;
+}
+
+.form-button button:hover {
+    background-color: rgba(60, 171, 171, 0.7);
+    transition: 0.2s;
+}
+
+/*sobre nosotros*/
+#mini-bio {
+  text-align: center;
+  padding: 2rem;
+}
+
+.texto-bio h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.texto-bio p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.imagenes-bio {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.imagenes-bio img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
