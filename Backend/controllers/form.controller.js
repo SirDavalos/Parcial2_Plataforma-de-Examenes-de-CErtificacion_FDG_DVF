@@ -1,3 +1,4 @@
+const mensajes = [];
 
 exports.submit_form = (req, res) => {
   const { nombre, correo, asunto, mensaje} = req.body || {};
@@ -8,14 +9,16 @@ exports.submit_form = (req, res) => {
     });
   }
 
-  const form = [
+  const form = {
     nombre,
     correo,
     asunto,
     mensaje
-  ];
+  };
 
-  console.log(`Mensaje recibido \n ${form}`);
+  mensajes.push(form);
+
+  console.log(`Mensaje recibido \n ${mensajes}`);
 
 
   return res.status(200).json({
