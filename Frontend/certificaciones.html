@@ -2,14 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="./imagenes/logo.png">
   <title>Certificaciones</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="Css/estilos.css">
 </head>
 <body>
   <nav class="navbar">
     <div class="nav-left">
-      <a href="index.html" class="nav-logo">CertiCLAN</a>
+      <div class="logo-circulo">
+        <img src="imagenes/logo.png">
+      </div>
+      <a href="index.html" class="nav-logo">CertifiCLAN</a>
       <a href="index.html" class="nav-link">Home</a>
       <a href="certificaciones.html" class="nav-link">Certificaciones</a>
       <a href="contacto.html" class="nav-link">Contacto</a>
@@ -34,8 +39,14 @@
       <div class="contenido">
         <div id="left">
           <h2>Java</h2>
-          <p>Somos un equipo dedicado a crear soluciones web simples y efectivas.</p>
-          <p>Esta es una página de ejemplo para la sección "About Us".</p>
+          <p>Es un lenguaje de programación de alto nivel, orientado a objetos y multiplataforma, 
+              conocido por su portabilidad, seguridad y robustez.</p>
+          <p>Ventajas: facil de aprender, oportunidades laborales, desarrollo de pensamiento lgico</p>
+          <p>puntuacion minima: 6/8</p>
+          <p>Tiempo de realizacion: 2hrs</p>
+          <p>Costo de la certificacion: $1,500</p>
+          <button class="boton-bueno">Intentar Examen</button>
+          <button class="boton-bueno">Realizar pago</button>
         </div>
         <div id="right">
           <img src="imagenes/java.png">
@@ -47,8 +58,16 @@
       <div class="contenido">
         <div id="left">
           <h2>HTML</h2>
-          <p>Somos un equipo dedicado a crear soluciones web simples y efectivas.</p>
-          <p>Esta es una página de ejemplo para la sección "About Us".</p>
+          <p>Son las siglas de HyperText Markup Language (Lenguaje de Marcado de Hipertexto), es 
+            el lenguaje estándar que se utiliza para crear y estructurar el contenido de las 
+            páginas web.</p>
+          <p>puntuacion minima: 5/8</p>
+          <p>Ventajas: mejora perfil profesional, base para desarrollo web, poder realizar multiples tareas en diferentes areas</p>
+          <p>Tiempo de realizacion: 1hrs 30min</p>
+          <p>Costo de la certificacion: $2,000</p>
+          <button class="boton" disabled>Intentar Examen</button>
+          <button class="boton" disabled>Realizar pago</button>
+          <p>Disponible hasta: 12/03/2026</p>
         </div>
         <div id="right">
           <img src="imagenes/html.png">
@@ -60,8 +79,16 @@
       <div class="contenido">
         <div id="left">
           <h2>JavaScript</h2>
-          <p>Somos un equipo dedicado a crear soluciones web simples y efectivas.</p>
-          <p>Esta es una página de ejemplo para la sección "About Us".</p>
+          <p>Es un lenguaje de programación que se usa principalmente para crear páginas 
+            web interactivas y dinámicas, funcionando junto con HTML y CSS. Permite añadir 
+            características como animaciones, menús desplegables, etc.</p>
+          <p>puntuacion minima: 7/8</p>
+          <p>Ventajas: compatibilidad con otros lenguajes, hay una gran comunidad de este lenguaje lo que facilita su aprendizaje, como se ejecuta directamente en el navegador es veloz</p>
+          <p>Tiempo de realizacion: 5min</p>
+          <p>Costo de la certificacion: $500</p>
+          <button class="boton" disabled>Intentar Examen</button>
+          <button class="boton" disabled>Realizar pago</button>
+          <p>Disponible hasta: 04/12/2025</p>
         </div>
         <div id="right">
           <img src="imagenes/javascript.jpg">
@@ -73,8 +100,16 @@
       <div class="contenido">
         <div id="left">
           <h2>C++</h2>
-          <p>Somos un equipo dedicado a crear soluciones web simples y efectivas.</p>
-          <p>Esta es una página de ejemplo para la sección "About Us".</p>
+          <p>Lenguaje de programación de propósito general que extiende el lenguaje C y se 
+            utiliza para crear software de alto rendimiento, como videojuegos, sistemas 
+            operativos y aplicaciones de escritorio.</p>
+          <p>puntuacion minima: 6/8</p>
+          <p>Ventajas: entendimiento de como funcionan los programas a nivel interno, sirve como base a la posibilidad de aprender otros lenguajes</p>
+          <p>Tiempo de realizacion: 1hr</p>
+          <p>Costo de la certificacion: $30,000</p>
+          <button class="boton" disabled>Intentar Examen</button>
+          <button class="boton" disabled>Realizar pago</button>
+          <p>Disponible hasta: 14/11/2025</p>
         </div>
         <div id="right">
           <img src="imagenes/c++.png">
@@ -106,6 +141,6 @@
         </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="js/login.js"></script>
 </body>
 </html>

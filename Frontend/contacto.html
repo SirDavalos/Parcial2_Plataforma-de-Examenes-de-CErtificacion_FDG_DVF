@@ -2,15 +2,20 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="./imagenes/logo.png">
   <title>Contacto</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="Css/estilos.css">
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-left">
-        <a href="index.html" class="nav-logo">CertiCLAN</a>
+        <div class="logo-circulo">
+            <img src="imagenes/logo.png">
+        </div>
+        <a href="index.html" class="nav-logo">CertifiCLAN</a>
         <a href="index.html" class="nav-link">Home</a>
         <a href="certificaciones.html" class="nav-link">Certificaciones</a>
         <a href="contacto.html" class="nav-link">Contacto</a>
@@ -29,9 +34,58 @@
 
   <!-- Secciones principales -->
   <main>
-    <section id="home">
-      <h1>Bienvenido a MiSitio</h1>
-      <p>Esta es una página de inicio sencilla con navegación y login modal.</p>
+    <section class="section-form">
+        <div class="contact-info">
+            <div class="contact-title">
+                <h2>Contacto</h2>
+                <h3>Esperamos oir pronto de ti</h3>
+            </div>
+            <div class="contact-data">
+                <h3>Teléfono</h3>
+                <p>+52 449 542 4249</p>
+            </div>
+            <div class="contact-data">
+                <h3>Correo Electrónico</h3>
+                <p>certificlan@servidor.com</p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="">
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="apPaterno">Apellido Paterno</label>
+                        <input type="text" id="apPat" name="Paterno">
+                    </div>
+                    <div class="form-input">
+                        <label for="apMaterno">Apellido Materno</label>
+                        <input type="text" id="apMat" name="Materno">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="email">Email*</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto"required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea rows="10" name="mensaje" id="mensaje" required></textarea>
+                    </div>
+                    <div class="form-button">
+                        <button type="submit" onclick="alert('Información enviada')">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </section>
   </main>
 
@@ -57,7 +111,7 @@
         </div>
    </footer>
   
-  <script src="js/app.js"></script>
+  <script src="js/login.js"></script>
   
 </body>
 </html>
