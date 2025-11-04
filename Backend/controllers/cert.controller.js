@@ -29,3 +29,9 @@ exports.buildPDF = (req, res) => {
         
     }
 }
+
+exports.msgacceso = (req, res) =>{
+    res.status(200).json({
+        message: "Acceso permitido, yeiiii"
+    });
+}
