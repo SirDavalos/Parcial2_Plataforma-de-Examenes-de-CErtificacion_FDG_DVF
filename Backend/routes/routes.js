@@ -1,7 +1,7 @@
 const express = require("express");
 const { login, logout, getProfile, verifyPayment } = require("../controllers/users.controller.js");
 const { verifyToken, verifyPaymentFalse, verifyPaymentTrue } = require("../middleware/middleware.js");
-const { buildPFD } = require("../controllers/cert.controller.js");
+const { buildPDF } = require("../controllers/cert.controller.js");
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ router.post("/logout", verifyToken, logout);
 
 router.get("/profile", verifyToken, getProfile);
 
-router.get("/pdf", verifyToken, buildPFD);
+router.get("/pdf", verifyToken, buildPDF);
 
 router.post("/payment", verifyToken, verifyPaymentFalse, verifyPaymentTrue, verifyPayment);
 
