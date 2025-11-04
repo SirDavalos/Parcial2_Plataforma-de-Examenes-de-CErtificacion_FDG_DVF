@@ -8,7 +8,8 @@ module.exports = [
     {
         cuenta: "Diego",
         nombre: "Diego Emilio Venegas Flores",
-        contrasena: "abcd"
+        contrasena: "abcd",
+        pagado: false
     },
     {
         cuenta: "Emilio",

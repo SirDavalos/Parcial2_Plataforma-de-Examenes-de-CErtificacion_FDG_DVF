@@ -1,9 +1,16 @@
 const express = require("express");
-const { login } = require("../controllers/questions.controller.js");
+const { login, logout, getProfile } = require("../controllers/users.controller.js");
+const { verifyToken } = require("../middleware/middleware.js");
+const { buildPFD} = require("../controllers/cert.controller.js");
 
 const router = express.Router();
 
-router.post("/login", console.login);
-router.get("/login", (req, res) => {res.send("Hello World!")})
+router.post("/login", login);
+
+router.post("/logout", verifyToken, logout);
+
+router.get("/profile", verifyToken, getProfile);
+
+router.get("/pdf", createPFD);
 
 module.exports = router;

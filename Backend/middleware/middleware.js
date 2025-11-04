@@ -20,8 +20,7 @@ exports.verifyToken = (req, res, next) => {
   }
 
   // Extraer el token (remover 'Bearer ')
-  const token = crypto.randomUUID();
-  console.log(token)
+  const token = authHeader.substring(7);
 
   // Verificar si el token existe en las sesiones activas
   const userId = sessions.get(token);
@@ -79,4 +78,3 @@ exports.getActiveSessions = () => {
 exports.clearAllSessions = () => {
   sessions.clear();
 };
-

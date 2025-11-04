@@ -13,7 +13,6 @@ const questions = require("../data/questions.js");
     
       // --- 1) Enviar preguntas al frontend ---  
 
-
     const startQuiz = (req, res) => {
         shuffle(questions);
     
@@ -23,6 +22,7 @@ const questions = require("../data/questions.js");
             questionsCpy[index] = questions[index];
         }
 
+        console.log(questionsCpy);
         // Crea una copia de todas las preguntas
         const publicQuestions = questionsCpy.map(({ id, text, options, correct}) => ({
             id, text, options
@@ -75,6 +75,5 @@ const questions = require("../data/questions.js");
         details
     });
 };
-
 
 module.exports = { startQuiz, submitAnswers };
