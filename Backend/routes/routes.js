@@ -1,6 +1,6 @@
 const express = require("express");
-const { login, logout, getProfile, verifyPayment } = require("../controllers/users.controller.js");
-const { verifyToken, verifyPaymentFalse, verifyPaymentTrue } = require("../middleware/middleware.js");
+const { login, logout, getProfile } = require("../controllers/users.controller.js");
+const { verifyToken, verifyPaymentFalse, verifyPaymentTrue, verifyPayment } = require("../middleware/middleware.js");
 const { buildPDF } = require("../controllers/cert.controller.js");
 const { submit_form } = require("../controllers/form.controller.js");
 
