@@ -79,3 +79,16 @@ exports.getProfile = (req, res) => {
     }
   });
 };
+
+exports.verifyPayment = (req, res) => {
+  const userId = req.userId; // El userId viene del middleware verifyToken
+
+  // Buscar el usuario en la base de datos
+  const user = users.find(u => u.cuenta === userId);
+
+    user.pagado = true;
+
+    return res.status(200).json({ 
+      message: 'Pago realizado con exito' 
+    });
+}

@@ -2,6 +2,7 @@
 // Estructura: { token: userId }
 const sessions = new Map();
 const crypto = require("crypto");
+const users = require("../data/user.js");
 
 /**
  * Middleware para verificar el token de sesión
@@ -54,6 +55,36 @@ exports.createSession = (userId) => {
   sessions.set(token, userId);
   return token;
 };
+
+exports.verifyPaymentFalse = (req, res) => {
+  const userId = req.userId; // El userId viene del middleware verifyToken
+
+  // Buscar el usuario en la base de datos
+  const user = users.find(u => u.cuenta === userId);
+
+  if (!user.pagado) {
+    return res.status(400).json({ 
+      error: 'Pago invalido' 
+    });
+  }
+
+  next();
+}
+
+exports.verifyPaymentTrue = (req, res) => {
+  const userId = req.userId; // El userId viene del middleware verifyToken
+
+  // Buscar el usuario en la base de datos
+  const user = users.find(u => u.cuenta === userId);
+
+  if (user.pagado) {
+    return res.status(400).json({ 
+      error: 'El pago ya fue realizado' 
+    });
+  }
+
+  next();
+}
 
 /**
  * Función para eliminar una sesión (logout)
