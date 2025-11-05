@@ -56,14 +56,14 @@ exports.createSession = (userId) => {
   return token;
 };
 
-exports.verifyPaymentFalse = (req, res) => {
+exports.verifyPaymentFalse = (req, res, next) => {
   const userId = req.userId; // El userId viene del middleware verifyToken
 
   // Buscar el usuario en la base de datos
   const user = users.find(u => u.cuenta === userId);
 
   if (!user.pagado) {
-    return res.status(400).json({ 
+    return res.status(401).json({ 
       error: 'Pago invalido' 
     });
   }
@@ -71,14 +71,14 @@ exports.verifyPaymentFalse = (req, res) => {
   next();
 }
 
-exports.verifyPaymentTrue = (req, res) => {
+exports.verifyPaymentTrue = (req, res, next) => {
   const userId = req.userId; // El userId viene del middleware verifyToken
 
   // Buscar el usuario en la base de datos
   const user = users.find(u => u.cuenta === userId);
 
-  if (user.pagado) {
-    return res.status(400).json({ 
+  if (user.pagado || user.pagado == "true") {
+    return res.status(401).json({ 
       error: 'El pago ya fue realizado' 
     });
   }
@@ -86,7 +86,7 @@ exports.verifyPaymentTrue = (req, res) => {
   next();
 }
 
-exports.verifyPayment = (req, res) => {
+exports.verifyPayment = (req, res, next) => {
   const userId = req.userId; // El userId viene del middleware verifyToken
 
   // Buscar el usuario en la base de datos
@@ -97,6 +97,22 @@ exports.verifyPayment = (req, res) => {
     return res.status(200).json({ 
       message: 'Pago realizado con exito' 
     });
+
+}
+
+exports.verifyAttemptTrue = (req, res, next) =>{
+  const userId = req.userId; // El userId viene del middleware verifyToken
+
+  // Buscar el usuario en la base de datos
+  const user = users.find(u => u.cuenta === userId);
+
+  if (user.intento) {
+    return res.status(401).json({ 
+      error: 'El usuario ya aplico el examen' 
+    });
+  }
+
+  next();
 }
 
 /**

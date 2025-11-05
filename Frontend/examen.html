@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="./imagenes/logo.png">
+  <title>Examen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="Css/estilos.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+        <div class="logo-circulo">
+            <img src="imagenes/logo.png">
+        </div>
+        <a href="index.html" class="nav-logo">CertifiCLAN</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="certificaciones.html" class="nav-link">Certificaciones</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+        <a href="AboutUs.html" class="nav-link">About Us</a>
+    </div>
+    <div class="nav-right">
+      <span id="userName" class="user-name"></span>
+      <button id="loginBtn" class="icon-btn" title="Login">
+        <span class="login-icon">🔒</span>
+      </button>
+      <button id="logoutBtn" class="icon-btn" title="Logout" style="display: none;">
+        <span class="logout-icon">🚪</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Secciones principales -->
+  <main>
+        <button id="btnCargar" >Comenzar examen</button>
+        <form id="quizForm" style="display:none;">
+        <div id="listaPreguntas"></div>
+        <button id="btnAnswer" type="submit" >Enviar respuestas</button>
+        </form>
+
+        <div id="resultado"></div>
+  </main>
+
+  <!-- Modal de Login -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Iniciar Sesión</h2>
+      <form id="formLogin">
+        <input type="text" id="login" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <footer class="footer">
+        <p>DIEGO EMILIO VENEGAS FLORES</p>
+        <p>siguenos en:</p>
+        <div class="red-social">
+            <a href="https://www.instagram.com/certificlan?igsh=MXVrZXIwdTYzd2Fxbw==" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+   </footer>
+  
+  <script src="js/login.js"></script>
+  <script src="js/exam.js"></script>
+  
+</body>
+</html>

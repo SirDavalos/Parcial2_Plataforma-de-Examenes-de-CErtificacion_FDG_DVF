@@ -83,7 +83,7 @@ body {
     grid-area: footer;
     background: darkcyan;
     color: #fff;
-	text-align: center;
+	text-align: left;
 }
 
 /* Navbar */
@@ -245,7 +245,7 @@ main section p {
 /*red social*/
 .red-social {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 15px;
   margin-top: 1rem;
 }
@@ -447,3 +447,55 @@ input {
 }
 
 /*ultima seccion*/
+.img-avalan {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.img-avalan img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+#btnCargar {
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background-color: darkcyan;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+#btnCargar:hover {
+    background-color: cyan;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btnAnswer {
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    background-color: darkcyan;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+#btnAnswer:hover {
+    background-color: cyan;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card{
+    padding: 5px;
+    margin-left: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

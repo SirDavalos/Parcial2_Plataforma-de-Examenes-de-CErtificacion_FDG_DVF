@@ -7,6 +7,8 @@ const port = process.env.port || 3000;
 const ALLOWED_ORIGINS = [
   'http://localhost:5500',
   'http://127.0.0.1:5500',
+  'http://10.13.148.36:5500',
+  'http://10.13.163.233:5500'
 ];
 
 app.use(cors({ 

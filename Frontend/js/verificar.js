@@ -1,7 +1,7 @@
 const botonR = document.getElementById("realizar");
 const botonP = document.getElementById("pagar");
 
-botonP.addEventListener("click", async() => {
+botonP.addEventListener("click", async () => {
     try {
     const res = await fetch("http://localhost:3000/api/payment", {
       method: "POST",
@@ -13,15 +13,15 @@ botonP.addEventListener("click", async() => {
     if (res.ok) {
         Swal.fire({
             icon: 'success',
-            title: 'Sesion cerrasa',
-            text: 'Ha cerrado la sesion correctamente',
+            title: 'Pago realizado',
+            text: 'El pago se realizo correctamente',
             confirmButtonColor: 'darkcyan'
         });
     } else {
       const data = await res.json();
         Swal.fire({
             icon: 'error',
-            title: 'Error al cerrar sesion',
+            title: 'Error al realizar pago',
             text: data?.error ?? `Error ${res.status}`,
             confirmButtonColor: 'darkcyan'
         });
@@ -47,17 +47,12 @@ botonR.addEventListener("click", async() => {
     });
     
     if (res.ok) {
-      Swal.fire({
-            icon: 'success',
-            title: 'Sesion cerrasa',
-            text: 'Ha cerrado la sesion correctamente',
-            confirmButtonColor: 'darkcyan'
-        });
+      location.href = "/Frontend/examen.html";
     } else {
       const data = await res.json();
         Swal.fire({
             icon: 'error',
-            title: 'Error al cerrar sesion',
+            title: 'Error al acceder a examen',
             text: data?.error ?? `Error ${res.status}`,
             confirmButtonColor: 'darkcyan'
         });

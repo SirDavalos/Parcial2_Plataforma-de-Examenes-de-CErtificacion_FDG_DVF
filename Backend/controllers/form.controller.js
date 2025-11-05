@@ -15,10 +15,9 @@ exports.submit_form = (req, res) => {
     asunto,
     mensaje
   };
-
   mensajes.push(form);
 
-  console.log(`Mensaje recibido \n ${mensajes}`);
+  console.log(`Mensaje recibido \n `, mensajes);
 
 
   return res.status(200).json({

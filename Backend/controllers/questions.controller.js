@@ -9,17 +9,16 @@ function shuffle(array) {
 }
 
 const questions = require("../data/questions.js");
-    
+const questionsCpy = [];
     
       // --- 1) Enviar preguntas al frontend ---  
 
     const startQuiz = (req, res) => {
         shuffle(questions);
-    
-        const questionsCpy = [];
 
         for (let index = 0; index < questions.length/2; index++) {
             questionsCpy[index] = questions[index];
+            shuffle(questionsCpy[index].options);
         }
 
         console.log(questionsCpy);
@@ -49,6 +48,8 @@ const questions = require("../data/questions.js");
     for (const q of questions) {
         // 3.1) Busca la respuesta enviada para esta pregunta
         const user = userAnswers.find(a => a.id === q.id);
+        if(!user)
+            continue;
 
         // 3.2) Determina si es correcta
         //isCorrect será verdadero solo si existe user y además la respuesta del usuario es igual a la correcta
@@ -71,7 +72,7 @@ const questions = require("../data/questions.js");
     return res.status(200).json({
         message: "Respuestas evaluadas.",
         score,
-        total: questions.length,
+        total: questionsCpy.length,
         details
     });
 };
